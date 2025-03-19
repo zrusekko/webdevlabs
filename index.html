@@ -12,8 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="./static/script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onload="addYear()">
     <header>
         <h1 id="webname">Zdenek Rusek Kotva</h1>
         <nav>
@@ -24,12 +25,15 @@
         </nav>
     </header>
     <div class="main">
-        <h2 id="greeting">Hi, my name is Zdenek</h2>
+        <h2 id="greeting"></h2>
         <img src="static/picture.jpeg" alt="Photo of Zdenek Rusek Kotva">
         <p id="intro">Hello world!</p>
+        <p id="shortBio">My name is Zdenek Rusek Kotva.</p>
+        <p id="fullBio">I am a student at Carnegie Mellon University studying Information Systems.</p>
+        <button id="readMoreButton">Read More</button>
     </div>
     <footer>
-        © 2025 designed and coded by Zdenek Rusek Kotva
+    <p id="copyYear"></p>
     </footer>
 </body>
 </html>

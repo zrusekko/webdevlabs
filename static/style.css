@@ -43,3 +43,30 @@ input[type="submit"] {
     border: none;
     border-radius: 12px;
 }
+
+#showListButton {
+    background-color: #D9D9D9;
+    color: #000;
+    border: none;
+    border-radius: 12px;
+}
+
+#funList {
+    display: none;
+}
+
+#readMoreButton {
+    background-color: #D9D9D9;
+    color: #000;
+    border: none;
+    border-radius: 12px;
+}
+
+#fullBio {
+    display: none;
+}
+
+#validationMessage {
+    color: #000;
+    display: none;
+}

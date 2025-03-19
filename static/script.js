@@ -36,27 +36,88 @@ function findTheBanana(array) {
     });
 }
 
-findTheBanana(L1);
-findTheBanana(L2);
+// findTheBanana(L1);
+// findTheBanana(L2);
 
 function greetingFunc() {
     let d = new Date();
     let h = d.getHours();
     let greeting;
 
-    if (h < 12) {
+    if (h >= 5 && h < 12) {
         greeting = "Good morning";
-    } else if (12 < h && h < 18) {
+    } else if (h >= 12 && h < 18) {
         greeting = "Good afternoon";
-    } else if (18 < h && h < 20) {
+    } else if (h >= 18 && h < 20) {
         greeting = "Good evening";
-    } else if ((20 < h && h < 24) || (0 < h && h < 5)) {
+    } else {
         greeting = "Good night";
     }
+
     let E = document.getElementById("greeting");
     E.innerHTML = greeting + ", my name is Zdenek";
 }
 
 if (window.location.href.includes("index.html")) {
     greetingFunc();
+}
+
+function addYear() {
+    const date = new Date();
+    const year = date.getFullYear();
+    const yearElement = document.getElementById("copyYear")
+    yearElement.innerHTML = "© " + year + " designed and coded by Zdenek Rusek Kotva";
+}
+
+function showList() {
+    document.getElementById("funList").style.display = "block";
+    document.getElementById("showListButton").style.display = "none";
+}
+
+$(document).ready(function () {
+    $("#readMoreButton").click(function () {
+        $("#fullBio").toggle();
+        if ($("#readMoreButton").text() === "Read More") {
+            $("#readMoreButton").text("Read Less");
+        } else {
+            $("#readMoreButton").text("Read More");
+        }
+    });
+});
+
+function validateForm() {
+    const form = document.getElementById("contactForm");
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const comment = document.getElementById("comment");
+    const submit = document.getElementById("submit");
+    const validationMessage = document.getElementById("validationMessage"); 
+    name.addEventListener("input", function() {
+        if (name.checkValidity()) {
+            validationMessage.style.display = "none";
+        } else {
+            validationMessage.style.display = "block";
+        }
+    });
+    email.addEventListener("input", function() {
+        if (email.checkValidity()) {
+            validationMessage.style.display = "none";
+        } else {
+            validationMessage.style.display = "block";
+        }
+    });
+    comment.addEventListener("input", function() {
+        if (comment.checkValidity()) {
+            validationMessage.style.display = "none";
+        } else {
+            validationMessage.style.display = "block";
+        }
+    });
+    submit.addEventListener("click", function() {
+        if (form.checkValidity()) {
+            validationMessage.style.display = "none";
+        } else {
+            validationMessage.style.display = "block";
+        }
+    });
 }

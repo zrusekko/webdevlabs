@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="../static/script.js" defer></script>
 </head>
-<body>
+<body onload="addYear()">
     <header>
         <h1 id="webname">Zdenek Rusek Kotva</h1>
         <nav>
@@ -25,7 +25,8 @@
     </header>
     <div class="main">
         <h2>Things I love to do for fun</h2>
-        <ul>
+        <button id="showListButton" onclick="showList()">Click to see...</button>
+        <ul id="funList">
             <li>Spending time with family</li>
             <li>Spending time with friends</li>
             <li>Playing video games</li>
@@ -34,7 +35,7 @@
         </ul>
     </div>
     <footer>
-        © 2025 designed and coded by Zdenek Rusek Kotva
+        <p id="copyYear"></p>
     </footer>
 </body>
 </html>

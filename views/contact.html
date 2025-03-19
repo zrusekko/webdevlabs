@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="../static/script.js" defer></script>
 </head>
-<body>
+<body onload="addYear()">
     <header>
         <h1 id="webname">Zdenek Rusek Kotva</h1>
         <nav>
@@ -25,7 +25,7 @@
     </header>
     <div class="main">
         <h2>Contact Me</h2>
-        <form>
+        <form id="contactForm" onsubmit="return validateForm()">
             <label for="name">Your name (required)</label><br>
             <input type="text" id="name" name="name" required><br>
             <label for="email">Your email (required)</label><br>
@@ -34,6 +34,7 @@
             <textarea id="comment" name="comment" required></textarea><br>
             <input type="submit" value="Submit">
         </form>
+        <p id="validationMessage">Please fill out the form correctly so I can get back to you.</p>
         <table>
             <tr>
                 <th>Contact Method</th>
@@ -54,7 +55,7 @@
         </table>
     </div>
     <footer>
-        © 2025 designed and coded by Zdenek Rusek Kotva
+        <p id="copyYear"></p>
     </footer>
 </body>
 </html>
