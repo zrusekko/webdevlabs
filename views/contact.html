@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="../static/script.js" defer></script>
 </head>
 <body onload="addYear()">
@@ -23,36 +24,42 @@
             <a href="contact.html">Contact</a>
         </nav>
     </header>
-    <div class="main">
-        <h2>Contact Me</h2>
-        <form id="contactForm" onsubmit="return validateForm()">
-            <label for="name">Your name (required)</label><br>
-            <input type="text" id="name" name="name" required><br>
-            <label for="email">Your email (required)</label><br>
-            <input type="email" id="email" name="email" required><br>
-            <label for="comment">Your comment (required)</label><br>
-            <textarea id="comment" name="comment" required></textarea><br>
-            <input type="submit" value="Submit">
-        </form>
-        <p id="validationMessage">Please fill out the form correctly so I can get back to you.</p>
-        <table>
-            <tr>
-                <th>Contact Method</th>
-                <th>Description</th>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td>zdenekrusekkotva@gmail.com</td>
-            </tr>
-            <tr>
-                <td>Phone</td>
-                <td>(803) 262-1435</td>
-            </tr>
-            <tr>
-                <td>LinkedIn</td>
-                <td><a href="https://www.linkedin.com/in/zdenek-rusek-kotva/" target="_blank">My LinkedIn Profile</a></td>
-            </tr>
-        </table>
+    <div class="mainLayout">
+        <div id="item1">
+            <h2>Find Me</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d1545.8494576408457!2d-79.9443018!3d40.4454162!3m2!1i1024!2i768!4f13.1!2m1!1scarnegie%20mellon%20university%20google%20maps!5e1!3m2!1sen!2sus!4v1742782382382!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div id="item2">
+            <h2>Contact Me</h2>
+            <form>
+                <label for="name">Your name (required)</label><br>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">Your email (required)</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="comment">Your comment (required)</label><br>
+                <textarea id="comment" name="comment" required></textarea><br>
+                <input type="submit" value="Submit" onclick="validate()">
+            </form>
+            <p id="validationMessage"></p>
+            <table>
+                <tr>
+                    <th>Contact Method</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>zdenekrusekkotva@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>(803) 262-1435</td>
+                </tr>
+                <tr>
+                    <td>LinkedIn</td>
+                    <td><a href="https://www.linkedin.com/in/zdenek-rusek-kotva/" target="_blank">My LinkedIn Profile</a></td>
+                </tr>
+            </table>
+        </div>
     </div>
     <footer>
         <p id="copyYear"></p>

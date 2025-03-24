@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="../static/script.js" defer></script>
 </head>
 <body onload="addYear()">
@@ -23,16 +24,31 @@
             <a href="contact.html">Contact</a>
         </nav>
     </header>
-    <div class="main">
-        <h2>Things I love to do for fun</h2>
-        <button id="showListButton" onclick="showList()">Click to see...</button>
-        <ul id="funList">
-            <li>Spending time with family</li>
-            <li>Spending time with friends</li>
-            <li>Playing video games</li>
-            <li>Watching TV shows and movies</li>
-            <li>Learning new programming languages</li>
-        </ul>
+    <div class="mainLayout">
+        <div id="item1">
+            <h2>Things I love to do for fun</h2>
+            <!-- <button id="showListButton" onclick="showList()">Click to see...</button> -->
+            <ul id="funList">
+                <li>Spending time with family</li>
+                <li>Spending time with friends</li>
+                <li>Playing video games</li>
+                <li>Watching TV shows and movies</li>
+                <li>Learning new programming languages</li>
+            </ul>
+        </div>
+        <div id="item2">
+            <img src="../static/fun_image.jpeg" alt="Fun Image" class="funIMG" width="300" height="600">
+        </div>
+        <div id="item3">
+            <iframe width="600" height="300" src="https://www.youtube.com/embed/Mgps6bWTtQ4" title="Commencement 2024 - Full Ceremony" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div id="item4">
+            <div class="container">
+                <h2>Need Some Advice?</h2>
+                <p id="adviceText">Click the button to get a random piece of advice!</p>
+                <button id="adviceButton" onclick="getAdvice()">Get Advice</button>
+            </div>
+        </div>
     </div>
     <footer>
         <p id="copyYear"></p>

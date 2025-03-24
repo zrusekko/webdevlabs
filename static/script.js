@@ -69,55 +69,38 @@ function addYear() {
     yearElement.innerHTML = "© " + year + " designed and coded by Zdenek Rusek Kotva";
 }
 
-function showList() {
-    document.getElementById("funList").style.display = "block";
-    document.getElementById("showListButton").style.display = "none";
-}
+// function showList() {
+//     document.getElementById("funList").style.display = "block";
+//     document.getElementById("showListButton").style.display = "none";
+// }
 
-$(document).ready(function () {
-    $("#readMoreButton").click(function () {
-        $("#fullBio").toggle();
-        if ($("#readMoreButton").text() === "Read More") {
-            $("#readMoreButton").text("Read Less");
-        } else {
-            $("#readMoreButton").text("Read More");
-        }
-    });
+$("#readMoreButton").click(function () {
+    $("#fullBio").toggle();
+    if ($("#readMoreButton").text() === "Read More") {
+        $("#readMoreButton").text("Read Less");
+    } else {
+        $("#readMoreButton").text("Read More");
+    }
 });
 
-function validateForm() {
-    const form = document.getElementById("contactForm");
-    const name = document.getElementById("name");
-    const email = document.getElementById("email");
-    const comment = document.getElementById("comment");
-    const submit = document.getElementById("submit");
-    const validationMessage = document.getElementById("validationMessage"); 
-    name.addEventListener("input", function() {
-        if (name.checkValidity()) {
-            validationMessage.style.display = "none";
-        } else {
-            validationMessage.style.display = "block";
-        }
-    });
-    email.addEventListener("input", function() {
-        if (email.checkValidity()) {
-            validationMessage.style.display = "none";
-        } else {
-            validationMessage.style.display = "block";
-        }
-    });
-    comment.addEventListener("input", function() {
-        if (comment.checkValidity()) {
-            validationMessage.style.display = "none";
-        } else {
-            validationMessage.style.display = "block";
-        }
-    });
-    submit.addEventListener("click", function() {
-        if (form.checkValidity()) {
-            validationMessage.style.display = "none";
-        } else {
-            validationMessage.style.display = "block";
-        }
+function validate() {
+    var name = document.getElementById("name");
+    var email = document.getElementById("email");
+    var comment = document.getElementById("comment");
+    var validationMessage = document.getElementById("validationMessage");
+    if (!name.checkValidity() || !email.checkValidity() || !comment.checkValidity()) {
+        validationMessage.innerHTML = "Please fill out the form correctly so I can get back to you."
+    }
+}
+
+function getAdvice() {
+    fetch("https://api.adviceslip.com/advice")
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("adviceText").innerText = data.slip.advice;
+    })
+    .catch(error => {
+        console.error("Error fetching advice", error);
+        document.getElementById("adviceText").innerText = "Something went wrong. Please try again.";
     });
 }

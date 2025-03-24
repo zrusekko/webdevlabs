@@ -37,7 +37,7 @@ form * {
     text-align: center;
 }
 
-input[type="submit"] {
+input[type="submit"], #adviceButton {
     background-color: #92ad70;
     color: #ffffff;
     border: none;
@@ -51,9 +51,9 @@ input[type="submit"] {
     border-radius: 12px;
 }
 
-#funList {
+/* #funList {
     display: none;
-}
+} */
 
 #readMoreButton {
     background-color: #D9D9D9;
@@ -67,6 +67,37 @@ input[type="submit"] {
 }
 
 #validationMessage {
-    color: #000;
-    display: none;
+    width: max-content;
+    margin: auto;
+}
+
+.mainLayout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#item1, #item2, #item3, #item4 {
+    flex: 1 1 40%;
+    margin: 10px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.funIMG {
+    border-radius: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    border-radius: 10%;
+    box-shadow: 0 4px 8px #000;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    width: 50%;
 }
