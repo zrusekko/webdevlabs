@@ -1,0 +1,156 @@
+* {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    padding: 5px;
+    margin: 5px;
+}
+
+#readMoreButton {
+    background-color: #D9D9D9;
+    color: #000;
+    border: none;
+    border-radius: 12px;
+}
+
+#fullBio {
+    display: none;
+}
+
+header {
+    grid-area: header;
+    background-color: plum;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    grid-area: nav;
+    background-color: lightpink;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.hamburger {
+    display: none;
+    color: white;
+}
+
+figure {
+    grid-area: figure;
+    background-color: lightsalmon;
+    text-align: center;
+}
+
+main {
+    grid-area: main;
+    background-color: lightyellow;
+}
+
+summary {
+    grid-area: summary;
+    background-color: lightgreen;
+    text-align: center;
+    padding: 20px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: lightblue;
+    text-align: center;
+    padding: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "nav nav"
+    "figure main"
+    "summary summary"
+    "footer footer";
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+nav a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+nav a.active {
+    color: #ffcc00;
+    font-weight: bold;
+    border-bottom: 2px solid #ffcc00;
+}
+
+@media only screen and (max-width: 768px) {
+    .grid-container {
+        display: grid;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "figure" 
+        "main"
+        "summary"
+        "footer";
+        grid-template-columns: 1fr;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        color: #ffffff;
+    }
+
+    50% {
+        transform: scale(1.05);
+        color: #ffcc00;
+    }
+
+    100% {
+        transform: scale(1);
+        color: #ffffff;
+    }
+}
+
+#webname {
+    animation: pulse 3s infinite;
+    background-color: plum;
+    display: inline-block;
+}

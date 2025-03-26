@@ -104,3 +104,18 @@ function getAdvice() {
         document.getElementById("adviceText").innerText = "Something went wrong. Please try again.";
     });
 }
+
+function toggleMenu() {
+    var navLinks = document.getElementById("navLinks");
+    navLinks.classList.toggle("active");
+}
+
+function highlightActiveLink() {
+    var currentPath = window.location.pathname;
+    var navLinks = document.querySelectorAll("nav a");
+    navLinks.forEach(navLink => {
+        if(navLink.href.includes(currentPath)) {
+            navLink.classList.add("active");
+        }
+    })
+}

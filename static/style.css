@@ -8,11 +8,6 @@
     margin: 5px;
 }
 
-#webname {
-    background-color: #92ad70;
-    color: #ffffff;
-}
-
 nav a {
     text-decoration: none;
     color: #92ad70;
@@ -100,4 +95,38 @@ input[type="submit"], #adviceButton {
     text-align: center;
     background-color: #f9f9f9;
     width: 50%;
+}
+
+nav a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+nav a.active {
+    color: #ffcc00;
+    font-weight: bold;
+    border-bottom: 2px solid #ffcc00;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        color: #ffffff;
+    }
+
+    50% {
+        transform: scale(1.05);
+        color: #ffcc00;
+    }
+
+    100% {
+        transform: scale(1);
+        color: #ffffff;
+    }
+}
+
+#webname {
+    animation: pulse 3s infinite;
+    background-color: #92ad70;
+    display: inline-block;
 }
